@@ -1,6 +1,6 @@
 <h1 align="center">Kanban board</h1>
 
-Website **Kanban Board** ini merupakan proyek yang saya kembangkan menggunakan **React.js** untuk memenuhi tugas Ujian Tengah Semester (UTS) perkuliahan. Website ini dibuat untuk memudahkan pengguna dalam mengelola, mengatur, dan memantau tugas atau pekerjaan agar lebih rapi, terstruktur, dan mudah dikelola.
+Website **Kanban Board** ini merupakan hasil pengembangan menggunakan **React.js** yang dibuat untuk memenuhi tugas Ujian Tengah Semester (UTS) perkuliahan. Website ini dirancang untuk memudahkan pengguna dalam mengelola, mengatur, dan memantau berbagai tugas atau pekerjaan agar lebih rapi, terstruktur, dan mudah dikelola.
 
 👉 [View Live](https://kanbann-board.netlify.app/)
 
