@@ -1,0 +1,191 @@
+.board {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: var(--board-w);
+  max-height: 100%;
+  word-wrap: break-word;
+  background-color: var(--board-color);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-color);
+  box-shadow: var(--shadow-sm);
+}
+.board__top {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 8px 8px 14px;
+}
+.board__title_wrap {
+  flex: 1;
+  min-width: 0;
+}
+.board__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.board__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.total__cards {
+  flex: 0 0 auto;
+  min-width: 22px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 999px;
+  padding-inline: 7px;
+  color: var(--muted);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+}
+.title__input {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--primary);
+  background: var(--surface);
+  outline: none;
+}
+
+.board__menu {
+  position: relative;
+  flex: 0 0 auto;
+}
+.icon__btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--muted);
+  transition: background-color 120ms, color 120ms;
+}
+.icon__btn:hover {
+  background: var(--hover);
+  color: var(--text-color);
+}
+
+.board__cards {
+  flex: 1 1 auto;
+  min-height: 12px;
+  padding: 4px 10px 8px;
+  overflow-y: auto;
+  /* Hanya vertikal yang ditahan. Jika `contain` juga berlaku ke sumbu X, geser
+     ke samping yang dimulai di atas kolom (di tablet hampir seluruh layar)
+     tidak diteruskan ke halaman, sehingga board tidak bisa digeser ke kanan. */
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: contain;
+  touch-action: pan-x pan-y;
+}
+.board__top .board__grip {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 36px;
+  margin-left: -4px;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  cursor: grab;
+  /* Sentuhan di sini tidak menggulir halaman; ditahan sebentar = seret */
+  touch-action: none;
+}
+.board--dragging .board__top .board__grip {
+  cursor: grabbing;
+  color: var(--primary);
+}
+.board__footer {
+  flex: 0 0 auto;
+  padding: 2px 6px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 640px), (orientation: landscape) and (max-height: 480px) and (pointer: coarse) {
+  .board {
+    width: 100%;
+    max-height: none;
+  }
+  /* Daftar vertikal: kartu tidak menggulir sendiri, halaman yang menggulir */
+  .board__cards {
+    overflow: visible;
+  }
+  .board .board__top {
+    cursor: default;
+  }
+  .board--collapsed .board__cards,
+  .board--collapsed .board__footer {
+    display: none;
+  }
+  .board--collapsed .board__top {
+    padding-bottom: 12px;
+  }
+  .board .board__fold {
+    display: grid;
+  }
+  .board--collapsed .board__fold svg {
+    transform: rotate(-90deg);
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .icon__btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Drag & drop board */
+.board__top {
+  cursor: grab;
+}
+.board--dragging {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+  transform-origin: top left;
+}
+.board--dragging .board__top {
+  cursor: grabbing;
+}
+
+.board__nomatch {
+  padding: 14px 6px 18px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Kolom kosong */
+.board__empty {
+  margin: 4px 0 8px;
+  padding: 18px 14px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+/* Tombol lipat: hanya tampil di HP */
+.board__fold {
+  display: none;
+  flex: 0 0 auto;
+}

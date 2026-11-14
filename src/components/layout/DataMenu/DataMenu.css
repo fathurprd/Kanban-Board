@@ -1,0 +1,35 @@
+.datamenu {
+  position: relative;
+}
+.datamenu__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  transition: background-color 120ms, border-color 120ms;
+}
+.datamenu__btn:hover {
+  background: var(--hover);
+  border-color: var(--primary);
+}
+.datamenu__dropdown {
+  min-width: 210px;
+}
+@media (max-width: 640px) {
+  .datamenu__btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+  .datamenu__btn span {
+    display: none;
+  }
+}

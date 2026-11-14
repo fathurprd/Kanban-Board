@@ -1,0 +1,45 @@
+/* Lencana tenggat (kartu & detail) */
+.due {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--muted);
+  background: var(--hover);
+  white-space: nowrap;
+}
+.due svg {
+  width: 13px;
+  height: 13px;
+}
+.due--soon,
+.due--today {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.18);
+}
+.due--overdue {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+.due--done {
+  color: var(--success);
+  background: rgba(47, 166, 106, 0.16);
+}
+[data-theme="dark"] .due--soon,
+[data-theme="dark"] .due--today {
+  color: #fbbf24;
+}
+.due--btn {
+  height: 30px;
+  padding-inline: 12px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
+.due--btn:hover {
+  filter: brightness(0.95);
+}

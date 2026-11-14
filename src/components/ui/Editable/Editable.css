@@ -1,0 +1,91 @@
+.editable {
+  height: auto;
+}
+.editable > p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: background-color 150ms, color 150ms;
+  user-select: none;
+}
+.editable > p svg {
+  width: 16px;
+  height: 16px;
+}
+.editable > p:hover {
+  background-color: var(--hover);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.editable__input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px;
+}
+.editable__input > textarea {
+  width: 100% !important;
+  min-height: 64px;
+  resize: vertical;
+  -webkit-appearance: none;
+  background-color: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  line-height: 1.45;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color 120ms, box-shadow 120ms;
+}
+.editable__input > textarea::placeholder {
+  color: var(--muted);
+}
+.editable__input > textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+.btn__control {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.btn__control > button {
+  height: 36px;
+  padding-inline: 16px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: background-color 120ms;
+}
+.btn__control > button:hover {
+  background-color: var(--primary-hover);
+}
+.close {
+  width: 34px !important;
+  height: 34px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  cursor: pointer;
+}
+.close:hover {
+  background: var(--hover);
+  color: var(--text-color);
+}
+/* Overrides kept from the old App.css */
+.add__board > textarea,
+.card_detail > textarea {
+  height: auto !important;
+}
+.cardinfo__editable {
+  width: fit-content;
+}

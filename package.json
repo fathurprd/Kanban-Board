@@ -1,0 +1,26 @@
+{
+  "name": "kanban-board-UTS",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hello-pangea/dnd": "^16.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-feather": "^2.0.10",
+    "use-local-storage": "^2.3.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "sass": "^1.52.3",
+    "vite": "^2.9.9"
+  }
+}

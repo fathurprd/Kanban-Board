@@ -1,0 +1,213 @@
+.custom__card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--card-color);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 11px 13px;
+  margin-bottom: 9px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color 140ms, box-shadow 140ms;
+}
+/* Efek hover hanya untuk mouse. Di layar sentuh (terutama iOS) :hover yang
+   mengubah tampilan membuat ketukan pertama "habis" untuk memicu hover, sehingga
+   tombol di dalam kartu harus diketuk berkali-kali. */
+@media (hover: hover) and (pointer: fine) and (not (any-pointer: coarse)) {
+  .custom__card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+  }
+}
+/* Elemen draggable: JANGAN beri transition/transform sendiri (diatur library),
+   itu penyebab drag terasa macet / salah posisi. */
+.custom__card--dragging {
+  transition: none;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+.custom__card,
+.board__top {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.card__text > p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.003em;
+  overflow-wrap: anywhere;
+}
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.card__footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+}
+.card__footer .task {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.card__footer .task svg {
+  width: 14px;
+  height: 14px;
+}
+.card__footer .task span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Touch devices: larger tap target feel */
+@media (hover: none) {
+  .custom__card {
+    padding: 12px 14px;
+  }
+  .card__text > p {
+    font-size: 15px;
+  }
+}
+
+.card__desc-icon {
+  display: inline-flex;
+  align-items: center;
+}
+.card__desc-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---- Pindahkan kartu lewat menu ---- */
+.card__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.card__text > p {
+  flex: 1;
+  min-width: 0;
+}
+.card__move {
+  flex: none;
+  display: grid;
+  place-items: center;
+  /* Area ketuk 44px (ukuran minimum nyaman untuk jempol); margin negatif
+     menjaga tinggi kartu tidak bertambah. */
+  width: 44px;
+  height: 44px;
+  margin: -12px -14px -12px 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0.8;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.card__move svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+.card__move:active,
+.card__move:focus-visible {
+  opacity: 1;
+  background: var(--hover, rgba(127, 127, 127, 0.15));
+  color: var(--primary);
+}
+/* Hanya perangkat dengan mouse (tanpa layar sentuh): tombol kecil dan baru
+   muncul saat kartu di-hover. Selain itu tombol SELALU terlihat. */
+@media (hover: hover) and (pointer: fine) and (not (any-pointer: coarse)) {
+  .card__move {
+    width: 28px;
+    height: 28px;
+    margin: -4px -6px 0 0;
+    opacity: 0;
+    transition: opacity 120ms, background-color 120ms;
+  }
+  .card__move svg {
+    width: 14px;
+    height: 14px;
+  }
+  .custom__card:hover .card__move,
+  .card__move:focus-visible {
+    opacity: 1;
+  }
+  .card__move:hover {
+    background: var(--hover, rgba(127, 127, 127, 0.15));
+    color: var(--primary);
+  }
+}
+.move__sheet {
+  padding: 18px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.move__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.move__card {
+  margin: 4px 0 12px;
+  font-size: 13px;
+  opacity: 0.7;
+  overflow-wrap: anywhere;
+}
+.move__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.move__item,
+.move__cancel {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text-color);
+  background: var(--card-color);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+}
+.move__item:not(:disabled):hover {
+  border-color: var(--primary);
+}
+.move__item:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.move__here {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+.move__count {
+  font-size: 12px;
+  opacity: 0.6;
+}
+.move__cancel {
+  justify-content: center;
+  margin-top: 12px;
+}

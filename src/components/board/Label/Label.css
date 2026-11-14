@@ -1,0 +1,115 @@
+.color__palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.color__swatch {
+  width: 44px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  transition: transform 100ms;
+}
+.color__swatch:hover {
+  transform: scale(1.06);
+}
+.color__swatch[aria-pressed="true"] {
+  border-color: var(--text-color);
+}
+
+/* Validasi & notifikasi di dalam dialog */
+.label__input > input.is-invalid,
+.label__input > input.is-invalid:focus {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px var(--danger-soft);
+  animation: shake 300ms;
+}
+.color__palette {
+  padding: 4px;
+  margin: 0 -4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid transparent;
+}
+.color__palette.is-invalid {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  animation: shake 300ms;
+}
+.label__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 22px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.label__notice svg {
+  margin-top: 1px;
+}
+.label__notice--error {
+  color: var(--danger);
+}
+.label__notice--success {
+  color: var(--success);
+}
+.label__notice span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@keyframes shake {
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.label__delete {
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--danger);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+.label__delete:hover {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+.label__applyall {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.label__applyall input {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  accent-color: var(--primary);
+}

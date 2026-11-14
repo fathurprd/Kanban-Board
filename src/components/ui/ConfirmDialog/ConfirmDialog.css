@@ -1,0 +1,25 @@
+.confirm__msg {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-color);
+  margin: 4px 0 18px;
+}
+.confirm__actions {
+  display: flex;
+  gap: 8px;
+}
+.confirm__actions .create__btn {
+  flex: 1;
+}
+.confirm__cancel {
+  height: 40px;
+  padding-inline: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+.confirm__cancel:hover {
+  background: var(--hover);
+}
