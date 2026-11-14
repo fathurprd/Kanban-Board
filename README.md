@@ -2,7 +2,7 @@
 
 Website **Kanban Board** ini merupakan hasil pengembangan menggunakan **React.js** yang dibuat untuk memenuhi tugas Ujian Tengah Semester (UTS) perkuliahan. Website ini dirancang untuk memudahkan pengguna dalam mengelola, mengatur, dan memantau berbagai tugas atau pekerjaan agar lebih rapi, terstruktur, dan mudah dikelola.
 
-👉 [View Live](https://kanbann-board.netlify.app/)
+👉 [View Live](https://kanban-board-uts.netlify.app/)
 
 ![image](https://github.com/fathurprd/Kanban-Board/blob/1f6b6fd3e29f5c5d932894aa58a5c23544439cde/src/assets/display.png)
 
@@ -13,7 +13,7 @@ Website **Kanban Board** ini merupakan hasil pengembangan menggunakan **React.js
 ![image](https://github.com/fathurprd/Kanban-Board/blob/1f6b6fd3e29f5c5d932894aa58a5c23544439cde/src/assets/dark-mode.png)
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0997d88e-10c7-4b3e-a4ad-992aaf744206/deploy-status)](https://kanbann-board.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0997d88e-10c7-4b3e-a4ad-992aaf744206/deploy-status)](https://kanban-board-uts.netlify.app/)
 
 ## Features ✨
 
